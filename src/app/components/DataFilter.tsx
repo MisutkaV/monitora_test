@@ -1,10 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
 import FilterButton from './buttons/FilterButton';
-
-const FilterContainer = styled.div`
-  text-align: center;
-`;
 
 interface FilterButtonData {
   label: string;
@@ -25,7 +20,7 @@ const filterButtons: FilterButtonData[] = [
 
 const DataFilter: React.FC<DataFilterProps> = ({ handleFilterChange, activeFilter }) => {
   return (
-    <FilterContainer>
+    <div className='text-center'>
       {filterButtons.map(({ label, action, icon }, index) => (
         <FilterButton
           key={index}
@@ -35,7 +30,7 @@ const DataFilter: React.FC<DataFilterProps> = ({ handleFilterChange, activeFilte
           icon={icon}
         />
       ))}
-    </FilterContainer>
+    </div>
   );
 };
 
